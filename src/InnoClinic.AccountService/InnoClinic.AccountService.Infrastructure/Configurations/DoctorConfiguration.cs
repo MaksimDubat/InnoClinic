@@ -2,51 +2,50 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace InnoClinic.AccountService.Infrastructure.Configurations
+namespace InnoClinic.AccountService.Infrastructure.Configurations;
+
+public class DoctorConfiguration : IEntityTypeConfiguration<Doctor>
 {
-    public class DoctorConfiguration : IEntityTypeConfiguration<Doctor>
+    public void Configure(EntityTypeBuilder<Doctor> builder)
     {
-        public void Configure(EntityTypeBuilder<Doctor> builder)
-        {
-            builder.HasKey(d => d.Id);
+        builder.HasKey(x => x.Id);
 
-            builder.Property(d => d.FirstName)
-                   .HasMaxLength(126)
-                   .IsRequired();
+        builder.Property(x => x.FirstName)
+               .HasMaxLength(126)
+               .IsRequired();
 
-            builder.Property(d => d.LastName)
-                   .HasMaxLength(126)
-                   .IsRequired();
+        builder.Property(x => x.LastName)
+               .HasMaxLength(126)
+               .IsRequired();
 
-            builder.Property(d => d.MiddleName)
-                   .HasMaxLength(126)
-                   .IsRequired();
+        builder.Property(x => x.MiddleName)
+               .HasMaxLength(126)
+               .IsRequired();
 
-            builder.Property(d => d.DateOfBirth)
-                   .HasColumnType("date")
-                   .IsRequired();
+        builder.Property(x => x.DateOfBirth)
+               .HasColumnType("date")
+               .IsRequired();
 
-            builder.Property(d => d.CareerStartYear)
-                   .IsRequired();
+        builder.Property(x => x.CareerStartYear)
+               .IsRequired();
 
-            builder.Property(d => d.Status)
-                   .HasMaxLength(126)
-                   .IsRequired();
+        builder.Property(x => x.Status)
+               .HasMaxLength(126)
+               .IsRequired();
 
-            builder.HasOne(d => d.Account)
-                   .WithOne(a => a.Doctor) 
-                   .HasForeignKey<Doctor>(d => d.AccountId)
-                   .OnDelete(DeleteBehavior.Cascade);
+        builder.HasOne(x => x.Account)
+               .WithOne(x => x.Doctor) 
+               .HasForeignKey<Doctor>(x => x.AccountId)
+               .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasOne(d => d.Specialization)
-                   .WithMany(s => s.Doctors)
-                   .HasForeignKey(d => d.SpecializationId)
-                   .OnDelete(DeleteBehavior.SetNull);
+        builder.HasOne(x => x.Specialization)
+               .WithMany(x => x.Doctors)
+               .HasForeignKey(x => x.SpecializationId)
+               .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasOne(d => d.Office)
-                   .WithMany(o => o.Doctors)
-                   .HasForeignKey(d => d.OfficeId)
-                   .OnDelete(DeleteBehavior.SetNull);
-        }
+        builder.HasOne(x => x.Office)
+               .WithMany(x => x.Doctors)
+               .HasForeignKey(x => x.OfficeId)
+               .OnDelete(DeleteBehavior.SetNull);
     }
 }
