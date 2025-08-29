@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InnoClinic.AccountService.Domain\InnoClinic.AccountService.Domain.csproj" />
+    <ProjectReference Include="..\InnoClinic.AccountService.Infrastructure\InnoClinic.AccountService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
