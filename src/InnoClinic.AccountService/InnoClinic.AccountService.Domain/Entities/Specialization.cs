@@ -4,7 +4,7 @@ public class Specialization
 {
     public int Id { get; set; }
     public string SpecializationName { get; set; } = null!;
-    public bool IsActive { get; set; } = true;
+    public bool IsActive { get; set; }
 
     public ICollection<Doctor> Doctors { get; set; } = new List<Doctor>();
 }

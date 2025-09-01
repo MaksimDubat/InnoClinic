@@ -17,14 +17,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Npgsql" Version="9.0.3" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="NSwag.AspNetCore" Version="14.4.0" />
     <PackageReference Include="NSwag.Core" Version="14.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InnoClinic.AccountService.Application\InnoClinic.AccountService.Business.csproj" />
     <ProjectReference Include="..\InnoClinic.AccountService.Domain\InnoClinic.AccountService.Domain.csproj" />
     <ProjectReference Include="..\InnoClinic.AccountService.Infrastructure\InnoClinic.AccountService.Infrastructure.csproj" />
   </ItemGroup>

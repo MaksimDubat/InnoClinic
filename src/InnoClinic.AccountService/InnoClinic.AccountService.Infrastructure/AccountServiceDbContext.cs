@@ -1,12 +1,10 @@
 ﻿using InnoClinic.AccountService.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace InnoClinic.AccountService.Domain.DataBase;
+namespace InnoClinic.AccountService.Infrastructure;
 
 public class AccountServiceDbContext : DbContext
 {
-    public AccountServiceDbContext(DbContextOptions<AccountServiceDbContext> options) : base(options) { }
-
     public DbSet<Account> Accounts { get; set; }
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Office> Offices { get; set; }
@@ -14,6 +12,8 @@ public class AccountServiceDbContext : DbContext
     public DbSet<Photo> Photos { get; set; }
     public DbSet<Receptionist> Receptionists { get; set; }
     public DbSet<Specialization> Specializations { get; set; }
+
+    public AccountServiceDbContext(DbContextOptions<AccountServiceDbContext> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -25,5 +25,4 @@ public class AccountServiceDbContext : DbContext
     {
         base.OnConfiguring(optionsBuilder);
     }
-
 }
