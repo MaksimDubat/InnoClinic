@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace InnoClinic.AccountService.WebAPI.Migrations
+namespace InnoClinic.AccountService.Infrastructure.Migrations
 {
     [DbContext(typeof(AccountServiceDbContext))]
     partial class AccountServiceDbContextModelSnapshot : ModelSnapshot

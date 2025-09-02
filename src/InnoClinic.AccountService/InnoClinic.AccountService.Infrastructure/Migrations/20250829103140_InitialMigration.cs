@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace InnoClinic.AccountService.WebAPI.Migrations
+namespace InnoClinic.AccountService.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class InitialMigration : Migration

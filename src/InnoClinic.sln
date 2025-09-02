@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.AccountService.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.AccountService.Infrastructure", "InnoClinic.AccountService\InnoClinic.AccountService.Infrastructure\InnoClinic.AccountService.Infrastructure.csproj", "{230CD02A-960A-4051-B1BE-B1F94468DBAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.AccountService.Business", "InnoClinic.AccountService\InnoClinic.AccountService.Application\InnoClinic.AccountService.Business.csproj", "{8300CBB1-7E4F-47C3-B2A5-A08BC8C90B8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnoClinic.AccountService.Business", "InnoClinic.AccountService\InnoClinic.AccountService.Business\InnoClinic.AccountService.Business.csproj", "{94877DDA-5A44-1864-2E42-7C0BBA97DA12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{230CD02A-960A-4051-B1BE-B1F94468DBAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{230CD02A-960A-4051-B1BE-B1F94468DBAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{230CD02A-960A-4051-B1BE-B1F94468DBAA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8300CBB1-7E4F-47C3-B2A5-A08BC8C90B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8300CBB1-7E4F-47C3-B2A5-A08BC8C90B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8300CBB1-7E4F-47C3-B2A5-A08BC8C90B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8300CBB1-7E4F-47C3-B2A5-A08BC8C90B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94877DDA-5A44-1864-2E42-7C0BBA97DA12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94877DDA-5A44-1864-2E42-7C0BBA97DA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94877DDA-5A44-1864-2E42-7C0BBA97DA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94877DDA-5A44-1864-2E42-7C0BBA97DA12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

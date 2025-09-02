@@ -2,13 +2,14 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace InnoClinic.AccountService.Application.Registrations;
+namespace InnoClinic.AccountService.Business.Extensions;
 
 public static class ApplicationServiceCollectionExtensions
 {
-    public static IServiceCollection AddApplicationRegistrations(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddAccountServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddInfrastructure(configuration);
+        services.AddDatabase(configuration);
+        services.AddRepositories();
 
         return services;
     }
