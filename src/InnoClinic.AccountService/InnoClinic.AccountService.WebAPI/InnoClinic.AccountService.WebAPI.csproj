@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InnoClinic.AccountService.Application\InnoClinic.AccountService.Business.csproj" />
+    <ProjectReference Include="..\InnoClinic.AccountService.Business\InnoClinic.AccountService.Business.csproj" />
     <ProjectReference Include="..\InnoClinic.AccountService.Domain\InnoClinic.AccountService.Domain.csproj" />
     <ProjectReference Include="..\InnoClinic.AccountService.Infrastructure\InnoClinic.AccountService.Infrastructure.csproj" />
   </ItemGroup>

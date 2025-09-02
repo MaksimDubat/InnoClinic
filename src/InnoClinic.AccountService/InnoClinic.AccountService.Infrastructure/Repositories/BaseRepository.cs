@@ -1,4 +1,4 @@
-﻿using InnoClinic.AccountService.Application.Interfaces;
+﻿using InnoClinic.AccountService.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -27,7 +27,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
 
     public async Task<T> DeleteAsync(int id, CancellationToken cancellation)
     {
-        var entity = await _context.Set<T>().FindAsync(id, cancellation);
+        T? entity = await _context.Set<T>().FindAsync(id, cancellation);
         _context.Remove(entity!);
 
         return entity!;
@@ -35,7 +35,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : class
 
     public async Task<List<T>> GetAllAsync(Func<IQueryable<T>, IQueryable<T>> queryBuilder, CancellationToken cancellation)
     {
-        var query = queryBuilder(_context.Set<T>().AsNoTracking());
+        IQueryable<T> query = queryBuilder(_context.Set<T>().AsNoTracking());
 
         return await query.ToListAsync(cancellation);
     }

@@ -1,6 +1,6 @@
-using InnoClinic.AccountService.Application.Registrations;
+using InnoClinic.AccountService.Business.Extensions;
 
-namespace InnoClinic.AccountService.WebAPI;
+namespace InnoClinic.AccountService.WebApi;
 
 public class Program
 {
@@ -9,7 +9,7 @@ public class Program
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        builder.Services.AddApplicationRegistrations(builder.Configuration);
+        builder.Services.AddAccountServices(builder.Configuration);
         builder.Services.AddControllers();
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

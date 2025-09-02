@@ -1,4 +1,4 @@
-﻿using InnoClinic.AccountService.Application.Interfaces;
+﻿using InnoClinic.AccountService.Domain.Repositories;
 using InnoClinic.AccountService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -8,7 +8,7 @@ namespace InnoClinic.AccountService.Infrastructure.Registrations;
 
 public static class InfrastructureServiceCollectionExtensions
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
         string? connectionString = configuration.GetConnectionString("AccountDb");
 
@@ -18,6 +18,12 @@ public static class InfrastructureServiceCollectionExtensions
            )
         );
 
+        return services;
+    }
+
+    public static IServiceCollection AddRepositories(this IServiceCollection services)
+    {
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
         return services;

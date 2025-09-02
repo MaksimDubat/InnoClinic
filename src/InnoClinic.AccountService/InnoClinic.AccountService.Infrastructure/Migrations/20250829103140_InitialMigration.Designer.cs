@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace InnoClinic.AccountService.WebAPI.Migrations
+namespace InnoClinic.AccountService.Infrastructure.Migrations
 {
     [DbContext(typeof(AccountServiceDbContext))]
     [Migration("20250829103140_InitialMigration")]
